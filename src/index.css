@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-color: #7cc6fe;
+  background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ body {
 }
 
 .app {
-  background-color: #252d4a;
+  background-color: #a2a2a2;
   width: 450px;
   min-height: 200px;
   height: min-content;
