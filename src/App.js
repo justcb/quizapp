@@ -1,43 +1,44 @@
 import React, { useState } from 'react';
 
 export default function App() {
+	const team = "Order";
 	const questions = [
 		{
-			questionText: 'What is the capital of France?',
+			questionText: 'I prefer clear rules to follow.',
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
+				{ answerText: 'True', isCorrect: true },
+				{ answerText: 'False', isCorrect: false },
 			],
 		},
 		{
-			questionText: 'Who is CEO of Tesla?',
+			questionText: 'The world is better when people can do what they want.',
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: 'True', isCorrect: false },
+				{ answerText: 'Flase', isCorrect: true },
 			],
 		},
 		{
-			questionText: 'The iPhone was created by which company?',
+			questionText: 'I would rather be an independent contractor than work in a big corporation.',
 			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
+				{ answerText: 'True', isCorrect: false },
+				{ answerText: 'False', isCorrect: true },
 			],
 		},
 		{
-			questionText: 'How many Harry Potter books are there?',
+			questionText: 'I prefer to select my own goals than have them told to me.',
 			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
+				{ answerText: 'True', isCorrect: false },
+				{ answerText: 'False', isCorrect: true },
 			],
 		},
+		{
+			questionText: 'I am a ...',
+			answerOptions: [
+				{ answerText: 'Shark, I hunt alone.', isCorrect: false },
+				{ answerText: 'Wolf, I hunt in packs.', isCorrect: true },
+			],
+		},
+
 	];
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -53,6 +54,10 @@ export default function App() {
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
+			if (score > 2) {
+				team = "Order"}
+				else {team = "Chaos"};
+	
 			setShowScore(true);
 		}
 	};
@@ -60,7 +65,7 @@ export default function App() {
 		<div className='app'>
 			{showScore ? (
 				<div className='score-section'>
-					You scored {score} out of {questions.length}
+					You are {team}
 				</div>
 			) : (
 				<>
