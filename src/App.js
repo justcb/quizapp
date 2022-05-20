@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export default function App() {
-	const team = "Order";
 	const questions = [
 		{
 			questionText: 'I prefer clear rules to follow.',
@@ -54,10 +53,6 @@ export default function App() {
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 		} else {
-			if (score > 2) {
-				team = "Order"}
-				else {team = "Chaos"};
-	
 			setShowScore(true);
 		}
 	};
@@ -65,7 +60,8 @@ export default function App() {
 		<div className='app'>
 			{showScore ? (
 				<div className='score-section'>
-					You are {team}
+
+					You scored {score}.  That suggests that you should be in Order.  But the choice is yours.  Choose below.
 				</div>
 			) : (
 				<>
